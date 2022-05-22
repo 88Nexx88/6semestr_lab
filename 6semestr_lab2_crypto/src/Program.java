@@ -26,6 +26,16 @@ public class Program {
                 byte[] source_txt = permutation_dec(txt_enc, key_dec);
                 tools.writeToFile("perm/"+args[2]+"_dec", source_txt);
                 break;
+            case "decode":
+                txt = tools.readFromFile("sub/"+args[2]);
+                byte[] key_sub_enc = tools.readFromFile("sub/key");
+                List<Byte> keySUB = new ArrayList<>();
+                for(byte b : key_sub_enc){
+                    keySUB.add(b);
+                }
+                byte[] txt_dec_sub = subm_dec(txt, keySUB);
+                tools.writeToFile("sub/dec_"+args[2], txt_dec_sub);
+                break;
             case "s":
                 txt = tools.readFromFile("sub/"+args[2]);
                 List<Byte> key_sub =  generatedKey.substitution();
@@ -36,11 +46,11 @@ public class Program {
                     c++;
                 }
                 tools.writeToFile("sub/key", key_sub1);
-                byte[] key_sub_enc = tools.readFromFile("sub/key");
+                key_sub_enc = tools.readFromFile("sub/key");
 
                 byte[] txt_enc_sub = subm_enc(txt, key_sub_enc);
                 tools.writeToFile("sub/"+args[2]+"_enc", txt_enc_sub);
-                byte[] txt_dec_sub = subm_dec(txt_enc_sub, key_sub);
+                txt_dec_sub = subm_dec(txt_enc_sub, key_sub);
                 tools.writeToFile("sub/"+args[2]+"_dec", txt_dec_sub);
                 break;
             case "g":
@@ -255,15 +265,14 @@ public class Program {
                 tool_key.add(n+key.size()*i);
             }
         }
-        System.out.println();
-        for(int b : tool_key){
-            System.out.print(b+" ");
-        }
-        System.out.println();
+
         for(int c = 0; c < size_encode_txt; c++){
             encode_txt[c] = source.get(tool_key.get(c));
         }
-
+        for(int b : encode_txt){
+            System.out.print(b+" ");
+        }
+        System.out.println();
         return encode_txt;
     }
 
