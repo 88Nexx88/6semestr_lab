@@ -1,4 +1,9 @@
-# 6semestr_lab
+# 
+ФАЙЛ PASSWORD.TXT не читать!
+КОНФИДЕНЦИАЛЬНО!
+
+
+6semestr_lab
 parametri  
 rejim key_size file  
 p 10 nexx.txt  
@@ -8,3 +13,4 @@ p - permition
 g - gammirovanie  
 v - vernama  
 r - round  
+
