@@ -1,6 +1,6 @@
 # 
 ФАЙЛ PASSWORD.TXT не читать!
-
+Лабы за 6 семсетр обучения на кафедре изи
 
 6semestr_lab
 parametri  
