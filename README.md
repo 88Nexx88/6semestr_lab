@@ -1,6 +1,5 @@
 # 
 ФАЙЛ PASSWORD.TXT не читать!
-КОНФИДЕНЦИАЛЬНО!
 
 
 6semestr_lab
